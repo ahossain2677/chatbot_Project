@@ -51,8 +51,8 @@ public class ChatBot2
 		
 		else if (findKeyword(statement, "Folwell") >= 0)
 		{
-			response = "";
-			emotion++;
+			response = "Ap Comp Sci A is hard ";
+			emotion--;
 		}
 
 		// Response transforming I want to statement
@@ -90,6 +90,7 @@ public class ChatBot2
 	}
 
 	
+
 	private String transformIWantStatement(String statement)
 	{
 		//  Remove the final period, if there is one
@@ -98,12 +99,12 @@ public class ChatBot2
 				.length() - 1);
 		if (lastChar.equals("."))
 		{
-			statement = statement.substring(0, statement
-					.length() - 1);
+			statement = statement.substring(0, statement.length() - 1);
+					
 		}
 		int psn = findKeyword (statement, "I want", 0);
 		String restOfStatement = statement.substring(psn + 6).trim();
-		return "Would you really be happy if you had " + restOfStatement + "?";
+		return "Would " + restOfStatement + "really make you happy?";
 	}
 	
 	
@@ -112,8 +113,8 @@ public class ChatBot2
 	{
 		//  Remove the final period, if there is one
 		statement = statement.trim();
-		String lastChar = statement.substring(statement
-				.length() - 1);
+		String lastChar = statement.substring(statement.length() - 1);
+				
 		if (lastChar.equals("."))
 		{
 			statement = statement.substring(0, statement
